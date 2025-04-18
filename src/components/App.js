@@ -1,4 +1,4 @@
-import React,{useState} from "react"
+import React,{useState,useEffect} from "react"
 
 
 let reviews1 = [
@@ -45,9 +45,15 @@ let reviews1 = [
 
 
 const App = () =>{
+  let [person,setPerson]=useState(null)
 let [reviews,setReview] =useState(reviews1)
 let [index,setIndex]=useState(0)
 
+
+
+useEffect(()=>{
+  setPerson(display())
+},[index,reviews])
 
 function increase(){
 
@@ -70,8 +76,8 @@ function decrease(){
 
 function randomIndex(){
   let random = Math.floor(Math.random()*reviews.length)
-
   setIndex(random)
+  
 }
 
 function display(){
@@ -81,26 +87,32 @@ function display(){
   })
 }
 
-console.log(index);
+
+
+// console.log(person);
+
+
 
 
   return <div>
-
+<h1 id="review-heading">Our Reviews</h1>
 {
-display() && <div>
-  <h1>{display().job}</h1>
-  <img src={display().image}/>
-  <h3>{display().name}</h3>
-  <h4>{display().job}</h4>
-  <p>{display().text}</p>
-</div>  
+person && <div>
+{/* <h2 className="author">{person.author} </h2> */}
+<img className="person-img" src={person.image}/>
+<h3 className="job">{person.job}</h3>
+<p className="author" id="author-id">{person.name}</p>
+<p className="info">{person.text}</p>
+
+</div>
+ 
 }
 
-<button onClick={increase}>Inc</button>
+<button className="next-btn" onClick={increase}>Inc</button>
 
-<button onClick={decrease}>Dec</button>
+<button children="prev-btn" onClick={decrease}>Dec</button>
   
- <button onClick={randomIndex}>Random</button> 
+ <button className="random-btn" onClick={randomIndex}>Random</button> 
   </div>
 }
 
