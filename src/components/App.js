@@ -45,21 +45,15 @@ let reviews = [
 
 
 const App = () =>{
-<<<<<<< HEAD
+
+  let [review,setReview] =useState(reviews)
+  let [index,setIndex]=useState(0)
 
   
-let [review,setReview] =useState(reviews)
-=======
-  let [person,setPerson]=useState(null)
-let [reviews,setReview] =useState(reviews1)
->>>>>>> c01caabed7e36ca6e0eeaa5b37b1150a72e6b9c9
-let [index,setIndex]=useState(0)
 
 
 
-useEffect(()=>{
-  setPerson(display())
-},[index,reviews])
+
 
 function increase(){
 
@@ -86,31 +80,14 @@ function randomIndex(){
   
 }
 
-// function display(){
-
-<<<<<<< HEAD
-//   return reviews.find((val,ind)=>{
-//     return ind==index
-//   })
-// }
-=======
-  return reviews.find((val,ind)=>{
-    return ind==index
-  })
-}
-
-
-
-// console.log(person);
-
-
->>>>>>> c01caabed7e36ca6e0eeaa5b37b1150a72e6b9c9
 
 const currentReview = reviews[index]
+console.log(currentReview);
+
 
   return <div>
 <h1 id="review-heading">Our Reviews</h1>
-<<<<<<< HEAD
+
 
 
  <div className="review">
@@ -122,19 +99,9 @@ const currentReview = reviews[index]
   <p className="text">{currentReview.text}</p>
 </div>  
 
-=======
-{
-person && <div>
-{/* <h2 className="author">{person.author} </h2> */}
-<img className="person-img" src={person.image}/>
-<h3 className="job">{person.job}</h3>
-<p className="author" id="author-id">{person.name}</p>
-<p className="info">{person.text}</p>
 
-</div>
- 
-}
->>>>>>> c01caabed7e36ca6e0eeaa5b37b1150a72e6b9c9
+
+
 
 <button className="next-btn" onClick={increase}>Inc</button>
 
