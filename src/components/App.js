@@ -1,7 +1,7 @@
 import React,{useState} from "react"
 
 
-let reviews1 = [
+let reviews = [
     {
       id: 1,
       name: 'susan smith',
@@ -45,7 +45,9 @@ let reviews1 = [
 
 
 const App = () =>{
-let [reviews,setReview] =useState(reviews1)
+
+  
+let [review,setReview] =useState(reviews)
 let [index,setIndex]=useState(0)
 
 
@@ -74,27 +76,28 @@ function randomIndex(){
   setIndex(random)
 }
 
-function display(){
+// function display(){
 
-  return reviews.find((val,ind)=>{
-    return ind==index
-  })
-}
+//   return reviews.find((val,ind)=>{
+//     return ind==index
+//   })
+// }
 
-console.log(index);
-
+const currentReview = reviews[index]
 
   return <div>
+<h1 id="review-heading">Our Reviews</h1>
 
-{
-display() && <div>
-  <h1>{display().job}</h1>
-  <img src={display().image}/>
-  <h3>{display().name}</h3>
-  <h4>{display().job}</h4>
-  <p>{display().text}</p>
+
+ <div className="review">
+  <h2 className="author" id={`author-${currentReview.id}`}>
+    {currentReview.id}
+  </h2>
+  <p className="job">{currentReview.job}</p>
+  <img src={currentReview.image} alt={currentReview.name} height={100} width={100}/>
+  <p className="text">{currentReview.text}</p>
 </div>  
-}
+
 
 <button onClick={increase}>Inc</button>
 
