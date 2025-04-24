@@ -91,12 +91,14 @@ console.log(currentReview);
 
 
  <div className="review">
-  <h2 className="author" id={`author-${currentReview.id}`}>
+  <div className="info">  <h2 className="author" id={`author-${currentReview.id}`}>
     {currentReview.id}
   </h2>
   <p className="job">{currentReview.job}</p>
   <img src={currentReview.image} alt={currentReview.name} height={100} width={100}/>
   <p className="text">{currentReview.text}</p>
+  </div>
+
 </div>  
 
 
@@ -108,6 +110,7 @@ console.log(currentReview);
 <button children="prev-btn" onClick={decrease}>Dec</button>
   
  <button className="random-btn" onClick={randomIndex}>Random</button> 
+
   </div>
 }
 
