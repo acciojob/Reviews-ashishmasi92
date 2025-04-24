@@ -91,11 +91,12 @@ console.log(currentReview);
 
 
  <div className="review">
-  <div className="info">  <h2 className="author" id={`author-${currentReview.id}`}>
+  <div className="info">  
+    <h2  className="author" id={`author-${currentReview.id}`}>
     {currentReview.id}
   </h2>
   <p className="job">{currentReview.job}</p>
-  <img src={currentReview.image} alt={currentReview.name} height={100} width={100}/>
+  <img className="person-img" src={currentReview.image} alt={currentReview.name} height={100} width={100}/>
   <p className="text">{currentReview.text}</p>
   </div>
 
@@ -105,9 +106,9 @@ console.log(currentReview);
 
 
 
-<button className="next-btn" onClick={increase}>Inc</button>
+<button className="next-btn" onClick={increase}>Next</button>
 
-<button children="prev-btn" onClick={decrease}>Dec</button>
+<button className="prev-btn" onClick={decrease}> Previous</button>
   
  <button className="random-btn" onClick={randomIndex}>Random</button> 
 
