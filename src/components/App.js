@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react"
+import React, { useState } from "react"
 
 
 let reviews = [
@@ -86,14 +86,14 @@ const App = () => {
 
 
   return <div>
-<div className="title" >
-  <h1 id="review-heading">Our Review</h1>
-</div>
+    <div className="title" >
+      <h1 id="review-heading">Our Reviews</h1>
+    </div>
     <article className="review" >
 
       <div className="container">
         <div className="img-container">
-          <img src={currentReview.image } className="person-img"/>
+          <img src={currentReview.image} alt={currentReview.name} className="person-img" />
         </div>
 
 
@@ -102,10 +102,8 @@ const App = () => {
         <p className="info">{currentReview.text} </p>
 
         <div className="button-container">
-
+          <button className="prev-btn" onClick={decrease}>Previous</button>
           <button className="next-btn" onClick={increase}>Next</button>
-
-          <button className="prev-btn" onClick={decrease}> Previous</button>
         </div>
         <button className="random-btn" onClick={randomIndex}>surprise me</button>
       </div>
