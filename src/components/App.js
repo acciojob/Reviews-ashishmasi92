@@ -102,8 +102,8 @@ const App = () => {
         <p className="info">{currentReview.text} </p>
 
         <div className="button-container">
-          <button className="prev-btn" onClick={decrease}>Previous</button>
-          <button className="next-btn" onClick={increase}>Next</button>
+          <button className="prev-btn" id="author-1" onClick={decrease}>Previous</button>
+          <button className="next-btn" id="author-1" onClick={increase}>Next</button>
         </div>
         <button className="random-btn" onClick={randomIndex}>surprise me</button>
       </div>
