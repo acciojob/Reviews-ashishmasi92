@@ -97,13 +97,15 @@ const App = () => {
         </div>
 
 
-        <h4 className="author" id={`author-${currentReview.id}`} >{currentReview.name}</h4>
+        <h4 className="author" id={`author-${currentReview.id}`}>
+          {currentReview.name}
+        </h4>
         <p className="job" >{currentReview.job}</p>
         <p className="info">{currentReview.text} </p>
 
         <div className="button-container">
-          <button className="prev-btn" id="author-1" onClick={decrease}>Previous</button>
-          <button className="next-btn" id="author-1" onClick={increase}>Next</button>
+          <button className="prev-btn" id="prev-btn" onClick={decrease}>Previous</button>
+          <button className="next-btn" id="next-btn" onClick={increase}>Next</button>
         </div>
         <button className="random-btn" onClick={randomIndex}>surprise me</button>
       </div>
